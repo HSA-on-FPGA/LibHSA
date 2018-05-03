@@ -1,0 +1,7 @@
+/build
+/vsim
+/ld
+/asm
+/obj
+/src/code_segments.h
+.makeenv

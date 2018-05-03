@@ -1,0 +1,8 @@
+work/
+transcript
+vsim.wlf
+simulation_environment.do
+config_out.mem
+dram_out.mem
+.nfs*
+wlft*

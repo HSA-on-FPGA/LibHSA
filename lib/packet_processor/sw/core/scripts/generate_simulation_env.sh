@@ -1,0 +1,9 @@
+#!/bin/bash
+
+source conf.sh
+
+echo "\
+export MIPS_NUM_TEXT_MEM_BLOCKS=$PP_NUM_TEXT_MEM_BLOCKS
+export MIPS_NUM_DATA_MEM_BLOCKS=$PP_NUM_DATA_MEM_BLOCKS
+export MIPS_NUM_ACCELERATOR_CORES=$NUM_ACCELERATOR_CORES\
+" > $1/simulation.env
