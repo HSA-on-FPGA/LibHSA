@@ -27,11 +27,11 @@ entity packet_processor_top is
         G_TIMER_INTERRUPT               : boolean := false;
 	G_NUM_ACCELERATOR_CORES		: integer := 1;
         -- exceptions
-        G_EXC_ADDRESS_ERROR_LOAD        : boolean := true;
-        G_EXC_ADDRESS_ERROR_FETCH       : boolean := true;
-        G_EXC_ADDRESS_ERROR_STORE       : boolean := true;
-        G_EXC_INSTRUCTION_BUS_ERROR     : boolean := true;
-        G_EXC_DATA_BUS_ERROR            : boolean := true;
+        G_EXC_ADDRESS_ERROR_LOAD        : boolean := false;
+        G_EXC_ADDRESS_ERROR_FETCH       : boolean := false;
+        G_EXC_ADDRESS_ERROR_STORE       : boolean := false;
+        G_EXC_INSTRUCTION_BUS_ERROR     : boolean := false;
+        G_EXC_DATA_BUS_ERROR            : boolean := false;
         G_EXC_SYSCALL                   : boolean := false;
         G_EXC_BREAKPOINT                : boolean := false;
         G_EXC_RESERVED_INSTRUCTION      : boolean := false;
