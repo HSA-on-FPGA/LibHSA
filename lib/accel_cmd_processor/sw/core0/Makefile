@@ -77,7 +77,7 @@ SYS_OBJ = $(SYS_SRC:$(SYSTEM_DIR)%.c=$(OBJ_DIR)%.o)
 # this line sources the configuration file, prints out the environment of the
 # child process, converts the bash sytnax to make syntax and stores the
 # variables in the file makeenv
-IGNORE := $(shell bash -c "source conf.sh; env | sed 's/=/:=/' | sed 's/^/export /' > .makeenv")
+IGNORE := $(shell env -i bash -c "source conf.sh; env | sed 's/=/:=/' | sed 's/^/export /' > .makeenv")
 include .makeenv
 
 # depends on the application and the elf binary
