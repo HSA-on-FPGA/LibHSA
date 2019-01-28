@@ -26,7 +26,7 @@ PROGS = $(patsubst %.cpp,%,$(SRCS))
 # this line sources the configuration file, prints out the environment of the
 # child process, converts the bash sytnax to make syntax and stores the
 # variables in the file makeenv
-IGNORE := $(shell bash -c "source ../../global_conf.sh; env | sed 's/=/:=/' | sed 's/^/export /' > .makeenv")
+IGNORE := $(shell env -i bash -c "source ../../global_conf.sh; env | sed 's/=/:=/' | sed 's/^/export /' > .makeenv")
 include .makeenv
 
 # depends on the binary
