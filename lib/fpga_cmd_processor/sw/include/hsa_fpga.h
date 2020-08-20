@@ -55,7 +55,7 @@ typedef enum {
 	CUSTOM_FILTER5x5 = 0x32,
 } fpga_operation_type_t;
 
-inline int get_pixel_storage(uint64_t colormodel){
+static inline int get_pixel_storage(uint64_t colormodel){
 	switch(colormodel){
 		case UINT16_GRAY_SCALE: return 2;
 		case UINT8_RGB: return 3;

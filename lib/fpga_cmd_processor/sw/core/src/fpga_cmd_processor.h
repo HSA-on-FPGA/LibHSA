@@ -50,35 +50,35 @@ uint16_t setup(uint16_t dims) {
 }
 
 // helper functions
-inline void send_aql_interrupt(){
+static inline void send_aql_interrupt(){
 	*SND_INT = 4;
 }
 
-inline void send_dma_interrupt(){
+static inline void send_dma_interrupt(){
 	*SND_INT = 3;	
 }
 
-inline void send_completion_interrupt(){
+static inline void send_completion_interrupt(){
 	*SND_INT = 2;
 }
 
-inline void send_add_core_interrupt(){
+static inline void send_add_core_interrupt(){
 	*SND_INT = 1;
 }
 
-inline void send_remove_core_interrupt(){
+static inline void send_remove_core_interrupt(){
 	*SND_INT = 0;
 }
 
-inline void change_packet_processor_state(){
+static inline void change_packet_processor_state(){
 	*CPU_HALT = 0;
 }
 
-inline void change_accelerator_state(unsigned int number){
+static inline void change_accelerator_state(unsigned int number){
 	*CPU_HALT = number;
 }
 
-inline void enable_interrupts(){
+static inline void enable_interrupts(){
 	const unsigned int status_reg_mask = 0x00000FC01;
 	__asm__("mtc0 %0,$12\n\t"        // asm code
 		 :                       // outputs optional
@@ -87,7 +87,7 @@ inline void enable_interrupts(){
 		 );
 }
 
-inline void disable_interrupts(){
+static inline void disable_interrupts(){
 	const unsigned int status_reg_mask = 0x00000FC00;
 	__asm__("mtc0 %0,$12\n\t"        // asm code
 		 :                       // outputs optional
